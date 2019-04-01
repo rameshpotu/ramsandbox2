@@ -6,13 +6,13 @@
 A developer in your company wrote a program called `search_directory.py`, and asked you 
 to write functional tests for it.
 
-The `search_directory` program is supposed to list all files that match a query inside a given directory, eg:
+The `search_directory.py` program is supposed to list all files that match a query inside a given directory, eg:
 
-    $ ./search_directory.py /home/candidate/documents report
+    $ python search_directory.py /home/candidate/documents report
     /home/candidate/documents/daily.txt
     /home/candidate/documents/work/2017/summary_report.txt
 
-The behavior of the `search_directory` program is described in the `search_directory.html`.
+The behavior of the `search_directory.py` program is described in the `search_directory.html`.
 
 
 ## Task
