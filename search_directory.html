@@ -1,0 +1,69 @@
+<html>
+    <h1>Search Directory</h1>
+
+    Lists the files corresponding to a search query inside the given directory.
+
+    <h2>Synopsis</h2>
+
+    <pre>search_directory <u>DIRECTORY</u> <u>SEARCH_QUERY</u></pre>
+
+    <h2>Description</h2>
+    The program searches for <u>SEARCH_QUERY</u> in each file under <u>DIRECTORY</u>, returning a list of unique file paths.
+    A file is said to "match the search query" if it satisfies <b>any</b> of the following conditions:
+
+    <p><blockquote>
+        <h3>File name condition</h3>
+        The search query is a substring of the file name. For example, a file with path:
+        <code>
+            /home/candidate/documents/sales_report.txt
+        </code>
+        has a name <code>sales_report.txt</code> that <b>matches</b> the queries:
+        <ul>
+            <li>port</li>
+            <li>sal</li>
+            <li>sales_report</li>
+            <li>report</li>
+            <li>.txt</li>
+        </ul>
+        but does <b>not match</b> the queries:
+        <ul>
+            <li>documents</li>
+            <li>candidate</li>
+            <li>sales-report</li>
+        </ul>
+
+        <h3>File content condition</h3>
+        The search query is a substring of the file content. For example, a file whose content is:
+        <pre>"This is an example file. Do not delete this example."</pre>
+        matches the query "ample", but does not match the query "readme".
+    </blockquote></p>
+
+    <h2>Additional Program Behavior</h2>
+    <ul>
+        <li>The search only matches files, not folders.</li>
+        <li>The search is case sensitive.</li>
+        <li>The search provides a list of files that match the search query, sorted by decreasing number of "query occurrences". The number of "query occurrences" is defined as a sum of two contributions:</li>
+        <ul>
+            <li>The number of times the search query appears in the file name. Do not count overlapping appearances of the search query. For example, in the filename <code>sales_report_0000.txt</code>, the query "report" occurs once, the query "00" occurs twice, and the query "t" occurs three times.</li>
+            <li>The number of times the search query appears in the file content. As in above, do not count overlapping appearances of the search query.</li>
+        </ul>
+        <li>For files with equal number of "query occurrences", they are sorted by ascending lexicographic order of the path.</li>
+        <li>The search only supports the case where <u>DIRECTORY</u> contains exclusively ASCII files.</li>
+        <li>The search query only supports the following characters: alphanumeric characters (i.e. a-z, A-Z, 0-9), underscores, dashes, and dots.</li>
+    </ul>
+
+    <h2>Example Output</h2>
+
+    If <u>DIRECTORY</u> is an absolute path:
+<pre>
+    /home/candidate/documents/daily.txt
+    /home/candidate/documents/work/2017/summary_report.txt
+</pre>
+
+    If <u>DIRECTORY</u> is a relative path:
+<pre>
+    ./daily.txt
+    ./work/2017/summary_report.txt
+</pre>
+
+</html>
