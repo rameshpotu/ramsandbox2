@@ -17,11 +17,11 @@ The behavior of the `search_directory.py` program is described in the `search_di
 
 ## Task
 
-Write functional tests to verify if the binary `search_directory` meets the behavior described in its help documentation. Use a test framework *of your choice* (eg, JUnit, Pytest, RSpec). 
+Write functional tests to verify if the program `search_directory.py` meets the behavior described in its help documentation. Use a **test framework of your choice** (eg, JUnit, Pytest, RSpec). 
 
 You should write as many tests as you feel necessary to cover the behavior described in the help documentation.
 
 
 ## Assumptions
 
-The program `search_directory` is a bug free implementation of the specification.
+The program `search_directory.py` is a bug free implementation of the specification.
